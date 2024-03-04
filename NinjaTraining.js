@@ -59,6 +59,7 @@ console.log(ninjaTraining(points2.length, points2)); // Output: 210
 
 // DP APPROACH
 //T.C = O(n)
+//S.C = O(n*4) = O(n) => Primarily determined by 2D array which has n*4 dimensions(since we have n days and 4 possible activities including the "last" activity).
 
 function ninjaTraining(n, points) {
   // Create a 2D array 'dp' with dimensions (n x 4) and initialize it with -1
