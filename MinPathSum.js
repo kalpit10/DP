@@ -14,7 +14,8 @@
 // Output: 12
 
 // RECURSIVE APPROACH
-
+//T.C = O(2^(m + n))
+//S.C = O(m + n)
 function minPathSum(grid) {
   function f(i, j) {
     if (i === 0 && j === 0) return grid[i][j];
@@ -35,3 +36,25 @@ const grid = [
 ];
 
 console.log(minPathSum(grid));
+
+// DP APPROACH
+// T.C = O(m*n)
+// S.C = O(m*n) + O(path length)
+var minPathSum = function (grid) {
+  const m = grid.length;
+  const n = grid[0].length;
+
+  const dp = Array.from({ length: m }, () => Array(n).fill(-1));
+  function f(i, j) {
+    if (i === 0 && j === 0) return grid[i][j];
+    if (i < 0 || j < 0) return Infinity;
+
+    if (dp[i][j] !== -1) return dp[i][j];
+
+    let up = grid[i][j] + f(i - 1, j);
+    let left = grid[i][j] + f(i, j - 1);
+
+    return (dp[i][j] = Math.min(up, left));
+  }
+  return f(m - 1, n - 1);
+};
