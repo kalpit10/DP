@@ -15,6 +15,9 @@
 // Output: -59
 // Explanation: The falling path with a minimum sum is shown.
 
+//Recursive Approach
+//T.C = O(3^n)
+//S.C = O(n * n) + O(path length)
 var minFallingPathSum = function (matrix) {
   function f(i, j) {
     // if diagonal columns get out of bounds so return max value so that we donot consider this path
@@ -37,6 +40,7 @@ const matrix1 = [
 
 console.log(minFallingPathSum(matrix1));
 
+// DP APPROACH
 // T.C = O(n * n)
 // S.C = O(n * n) + O(path length)
 // GIVES T.L.E
@@ -73,7 +77,7 @@ var minFallingPathSum = function (matrix) {
   const n = matrix.length;
 
   // Create a DP array to store the minimum falling path sum for each cell
-  const dp = Array.from({ length: n }, () => Array(n).fill(0));
+  const dp = Array.from({ length: n }, () => Array(n).fill(-1));
 
   // Initialize the first row of the DP array with the values from the matrix
   for (let j = 0; j < n; j++) {
