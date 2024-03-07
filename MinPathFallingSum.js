@@ -17,7 +17,7 @@
 
 //Recursive Approach
 //T.C = O(3^n)
-//S.C = O(n * n) + O(path length)
+//S.C = O(n) where n is the no. of rows we have to visit
 var minFallingPathSum = function (matrix) {
   function f(i, j) {
     // if diagonal columns get out of bounds so return max value so that we donot consider this path
