@@ -87,15 +87,15 @@ var cherryPickup = function (grid) {
     let cherries = grid[i][j1] + (j1 !== j2 ? grid[i][j2] : 0);
     let maxCherries = 0;
 
-    for (let dj1 = -1; dj1 <= 1; dj1++) {
-      for (let dj2 = -1; dj2 <= 1; dj2++) {
+    for (let di = -1; di <= 1; di++) {
+      for (let dj = -1; dj <= 1; dj++) {
         // j1+dj1 is done as it will calc. where it will go from current column to next colum of next row
         // if we are on 2nd col of firrst row so in the 2nd row we will be 2 + (-1) if we go diag. left
         // so it will be 1st column of the second row.
         // It will add the current collected cherries + explore all paths and then return all cherries
         maxCherries = Math.max(
           maxCherries,
-          cherries + f(i + 1, j1 + dj1, j2 + dj2)
+          cherries + f(i + 1, j1 + di, j2 + dj)
         );
       }
     }
