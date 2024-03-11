@@ -66,6 +66,7 @@ var cherryPickup = function (grid) {
 // DP APPROACH
 // T.C = O(m*n^2) for each cell in the grid, we explore all possible next positions for both robots,
 // resulting in iterations, and we do this for each row m times.[i, j1, j2 so m * n * n]
+// S.C = O(m*n*n) DP ARRAY
 var cherryPickup = function (grid) {
   const m = grid.length; // Number of rows in the grid
   const n = grid[0].length; // Number of columns in the grid
