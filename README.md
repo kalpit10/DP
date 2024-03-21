@@ -17,4 +17,4 @@ RULES FOR TABULATION:-
 2. Write the changing parameters
 3. Copy the recurrence.
 
-Note:- If in the question it is mentioned that you can take in finite supply/ multiple use of that thing. When you consider take option always stand at the same index, dont do (ind - 1) for that.
+Note:- If in the question it is mentioned that you can take infinite supply/ multiple use of that thing. When you consider take option always stand at the same index, dont do (ind - 1) for that.
