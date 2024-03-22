@@ -107,7 +107,7 @@ var numSubseq = function (nums, target, d) {
     return dp[ind][target];
   }
 
-  return f(m - 1, (totalSum - d) / 2, 3);
+  return f(m - 1, (totalSum - d) / 2);
 };
 
 const num1 = [1, 1, 1, 1];
